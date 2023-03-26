@@ -1,6 +1,6 @@
 package PaqC03;
 
-public class Contenedor extends Hub {
+public class Contenedor extends Hub{
     private  static int contador=0;
     private final int nidentificador=contador;
     private int peso;
@@ -14,11 +14,11 @@ public class Contenedor extends Hub {
     public Contenedor( int peso, String pais, int prioridad, String desccontenido, String empresaenvio, String empresareceptor ){
 
         if(peso>0) this.peso=peso;
-      if(pais != null)  this.pais=pais;
+        if(pais != null)  this.pais=pais;
         if(prioridad>=1 && prioridad<=3) this.prioridad=prioridad;
-      if(desccontenido != null)  this.desccontenido=desccontenido;
-      if(empresaenvio != null)  this.empresaenvio=empresaenvio;
-      if(empresareceptor != null)  this.empresareceptor=empresareceptor;
+        if(desccontenido != null)  this.desccontenido=desccontenido;
+        if(empresaenvio != null)  this.empresaenvio=empresaenvio;
+        if(empresareceptor != null)  this.empresareceptor=empresareceptor;
         contador++;
 
 
@@ -45,7 +45,7 @@ public class Contenedor extends Hub {
     }
 
     public void setPais(String pais) {
-      if(pais != null)  this.pais = pais;
+        if(pais != null)  this.pais = pais;
     }
 
     public boolean isInspeccionado() {
@@ -69,7 +69,7 @@ public class Contenedor extends Hub {
     }
 
     public void setDesccontenido(String desccontenido) {
-      if(desccontenido != null)  this.desccontenido = desccontenido;
+        if(desccontenido != null)  this.desccontenido = desccontenido;
     }
 
     public String getEmpresaenvio() {
@@ -77,7 +77,7 @@ public class Contenedor extends Hub {
     }
 
     public void setEmpresaenvio(String empresaenvio) {
-       if(empresaenvio != null) this.empresaenvio = empresaenvio;
+        if(empresaenvio != null) this.empresaenvio = empresaenvio;
     }
 
     public String getEmpresareceptor() {
@@ -85,7 +85,7 @@ public class Contenedor extends Hub {
     }
 
     public void setEmpresareceptor(String empresareceptor) {
-       if(empresareceptor != null) this.empresareceptor = empresareceptor;
+        if(empresareceptor != null) this.empresareceptor = empresareceptor;
     }
 
     public String toString() {
