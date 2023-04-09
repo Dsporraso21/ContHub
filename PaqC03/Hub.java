@@ -1,19 +1,20 @@
 
 package PaqC03;
 
+import PaqC03.Contenedor;
+
 public class Hub {
-    protected Contenedor[][] c;
+    protected PaqC03.Contenedor[][] c;
 
     public Hub() {
-        this.c = new Contenedor[10][12];
+        this.c = new PaqC03.Contenedor[10][12];
     }
-    public Contenedor[][] getContenedor(){
+    public PaqC03.Contenedor[][] getContenedor(){
         return c;
     }
-    public void AñadirContenedor(int i, int j,Contenedor x){
-        c[i][j]=x;
 
-    }
+
+
 
     public String toString() {
         String s = "";
@@ -31,7 +32,7 @@ public class Hub {
 
     }
 
-    public void apilar(Contenedor c1) {
+    public void apilar(PaqC03.Contenedor c1) {
         if (c1 != null) {
             if (c1.getPrioridad() == 1 || c1.getPrioridad() == 2) {
                 int columna = c1.getPrioridad() - 1;
@@ -69,10 +70,10 @@ public class Hub {
 
 
 
-    public Contenedor desapila(int columna){
+    public PaqC03.Contenedor desapila(int columna){
         for (int i = 0; i < c.length; i++) {
             if(c[i][columna] != null){
-                Contenedor aux=c[i][columna];
+                PaqC03.Contenedor aux=c[i][columna];
                 c[i][columna]=null;
                 return aux;
 
@@ -85,23 +86,21 @@ public class Hub {
 
 
 
-    public void muestraDatos(int nidentificador){
-        int encontrado=0;
+    public Contenedor muestraDatos(int nidentificador){
+
         for (int i = 0; i < c.length ; i++) {
             for (int j = 0; j <c[0].length ; j++) {
                 if(c[i][j] != null && c[i][j].getNidentificador()==nidentificador){
-                    System.out.println(c[i][j].toString());
-                    encontrado++;
+                    return c[i][j];
+
                 }
 
             }
         }
-        if(encontrado==0){
-            System.out.println("El contenedor con ese numero de identificador no se encuentra");
-        }
+        return null;
     }
 
-    public void calcularPais(String pais){
+    public int calcularPais(String pais){
         int contador=0;
         for (int i = 0; i < c.length; i++) {
             for (int j = 0; j < c[0].length; j++) {
@@ -112,7 +111,20 @@ public class Hub {
             }
 
         }
-        System.out.println("Hay un total de "+contador+" contenedores para ese pais");
+        return contador;
+    }
+
+    public void desapila(){
+        for (int i = 0; i < c.length; i++) {
+            for (int j = 0; j <c[0].length ; j++) {
+                if (c[i][j] != null){
+                    c[i][j]=null;
+                    return;
+                }
+
+            }
+
+        }
     }
 
 

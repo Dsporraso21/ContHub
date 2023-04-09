@@ -1,8 +1,8 @@
 package PaqC03;
 
-public class Contenedor extends Hub{
-    private  static int contador=0;
-    private final int nidentificador=contador;
+public class Contenedor extends Hub {
+
+    private int nidentificador;
     private int peso;
     private String pais;
     private boolean inspeccionado=false;
@@ -11,15 +11,15 @@ public class Contenedor extends Hub{
     private String empresaenvio;
     private String empresareceptor;
 
-    public Contenedor( int peso, String pais, int prioridad, String desccontenido, String empresaenvio, String empresareceptor ){
-
+    public Contenedor( int nidentificador,int peso, String pais, int prioridad, String desccontenido, String empresaenvio, String empresareceptor ){
+        this.nidentificador=nidentificador;
         if(peso>0) this.peso=peso;
         if(pais != null)  this.pais=pais;
         if(prioridad>=1 && prioridad<=3) this.prioridad=prioridad;
         if(desccontenido != null)  this.desccontenido=desccontenido;
         if(empresaenvio != null)  this.empresaenvio=empresaenvio;
         if(empresareceptor != null)  this.empresareceptor=empresareceptor;
-        contador++;
+
 
 
     }
@@ -30,7 +30,9 @@ public class Contenedor extends Hub{
         return nidentificador;
     }
 
-
+    public void setNidentificador(int nidentificador) {
+        this.nidentificador = nidentificador;
+    }
 
     public int getPeso() {
         return peso;
