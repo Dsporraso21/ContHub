@@ -1,5 +1,7 @@
 package PaqC03;
 
+import PaqC03.Hub;
+
 public class Contenedor extends Hub {
 
     private int nidentificador;
