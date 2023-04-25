@@ -1,6 +1,8 @@
 package PaqGrupo03.FrontEnd;
 
 import PaqC03.Contenedor;
+import PaqC03.Puerto;
+import PaqC03.Hub;
 
 import javax.swing.*;
 
@@ -17,6 +19,7 @@ public class Contenedores2 extends JFrame {
     private JRadioButton a1RadioButton;
     private JRadioButton a2RadioButton;
     private JRadioButton a3RadioButton;
+    private JRadioButton ChequearAduana;
     private JCheckBox inspeccionadoEnAduanasCheckBox;
     private JLabel txtPais;
 

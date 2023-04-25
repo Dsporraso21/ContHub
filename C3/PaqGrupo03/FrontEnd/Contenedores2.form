@@ -118,11 +118,6 @@
         </constraints>
         <properties/>
       </component>
-      <hspacer id="fc5d7">
-        <constraints>
-          <grid row="6" column="3" row-span="1" col-span="4" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
       <component id="1af4f" class="javax.swing.JLabel" binding="txtPais">
         <constraints>
           <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -194,6 +189,14 @@
         </constraints>
         <properties>
           <text value="3"/>
+        </properties>
+      </component>
+      <component id="cd577" class="javax.swing.JRadioButton" binding="cheaquearAduanaRadioButton" default-binding="true">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="CheaquearAduana"/>
         </properties>
       </component>
     </children>
