@@ -4,6 +4,8 @@ import PaqC03.Hub;
 
 public class Contenedor extends Hub {
 
+    private boolean chequeadoEnAduana;
+    private String empresaRemitente;
     private int nidentificador;
     private int peso;
     private String pais;
@@ -13,7 +15,7 @@ public class Contenedor extends Hub {
     private String empresaenvio;
     private String empresareceptor;
 
-    public Contenedor( int nidentificador,int peso, String pais, int prioridad, String desccontenido, String empresaenvio, String empresareceptor ){
+    public Contenedor(  int nidentificador,int peso, String pais, int prioridad, String desccontenido, String empresaenvio,String  empresaRemitente, String empresareceptor ){
         this.nidentificador=nidentificador;
         if(peso>0) this.peso=peso;
         if(pais != null)  this.pais=pais;
@@ -21,12 +23,16 @@ public class Contenedor extends Hub {
         if(desccontenido != null)  this.desccontenido=desccontenido;
         if(empresaenvio != null)  this.empresaenvio=empresaenvio;
         if(empresareceptor != null)  this.empresareceptor=empresareceptor;
+        this.chequeadoEnAduana = false;
+        this.empresaRemitente = empresaRemitente;
 
 
 
     }
 
-
+    public String toString() {
+        return "Contenedor #" + nidentificador + " de " + empresaRemitente + ", peso: " + peso + " toneladas, estado de chequeo en aduana: " + (chequeadoEnAduana ? "chequeado" : "no chequeado");
+    }
 
     public int getNidentificador() {
         return nidentificador;

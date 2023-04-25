@@ -15,6 +15,18 @@ public class Hub {
 
 
 
+    public String obtenerContenedoresConPesoMayorOIgual(double pesoMinimo) {
+        StringBuilder sb = new StringBuilder();
+
+        for (examen.Contenedor contenedor : contenedores) {
+            if (contenedor.getPeso() >= pesoMinimo) {
+                sb.append(contenedor.toString());
+                sb.append("\n");
+            }
+        }
+
+        return sb.toString();
+    }
 
     public String toString() {
         String s = "";

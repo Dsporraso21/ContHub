@@ -13,11 +13,22 @@ public class Puerto {
             P[i] = aux;
 
         }
-
-
     }
+    public void marcarContenedoresComoChequeadosEnAduana(double pesoMinimo) {
+        for (Contenedor contenedor = contenedores) {
+            if (contenedor.getPeso() >= pesoMinimo) {
+                contenedor.marcarComoChequeadoEnAduana();
+            }
+        }
+    }
+    public void marcarContenedoresComoChequeadosEnAduana(double pesoMinimo, int idHub) {
+        for (Hub hub : hubs) {
+            if (hub.getId() == idHub) {
+                hub.marcarContenedoresComoChequeadosEnAduana(pesoMinimo);
+            }
+        }
 
-    public boolean Ocupado (int hub){  //ok
+    public boolean Ocupado (int hub){
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 10; j++) {
                 if(P[hub].getContenedor()[i][j]==null){
@@ -40,8 +51,21 @@ public class Puerto {
             return c;
         }
     }
+    public  String obtenerContenedoresConPesoMayorOIgual(double pesoMinimo) {
+        StringBuilder sb = new StringBuilder();
 
+        for (examen.Contenedor contenedor : contenedores) {
+            if (contenedor.getPeso() >= pesoMinimo) {
+                sb.append(contenedor.toString());
+                sb.append("\n");
+            }
+        }
 
+        return sb.toString();
+    }
+
+        }
+    }
     public void desapilar(int hub, int col) {
         P[hub].desapila(col);
     }
